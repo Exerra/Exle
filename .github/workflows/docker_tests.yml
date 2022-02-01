@@ -18,9 +18,9 @@ jobs:
         docker run --publish 5000:5000 --detach --name exle-nocompose exle:test
         sleep 15
         docker exec exle-nocompose curl -f http://localhost:5000/healthz || exit 1
-    - name: build and test (docker-compose)
-      run: |
-        docker rm -f exle-nocompose
-        WHOOGLE_IMAGE="exle:test" docker-compose up --detach
-        sleep 15
-        docker exec exle curl -f http://localhost:5000/healthz || exit 1
+    #- name: build and test (docker-compose)
+    #  run: |
+    #    docker rm -f exle-nocompose
+    #    WHOOGLE_IMAGE="exle:test" docker-compose up --detach
+    #    sleep 15
+    #    docker exec exle curl -f http://localhost:5000/healthz || exit 1
